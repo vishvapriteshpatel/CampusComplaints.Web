@@ -1,0 +1,35 @@
+@model CampusComplaints.Web.Models.Complaint
+
+<div class="mb-3">
+    <label asp-for="Title" class="form-label"></label>
+    <input asp-for="Title" class="form-control" />
+    <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+<div class="mb-3">
+    <label asp-for="Description" class="form-label"></label>
+    <textarea asp-for="Description" rows="4" class="form-control"></textarea>
+    <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+<div class="row">
+    <div class="col-md-4 mb-3">
+        <label asp-for="Category" class="form-label"></label>
+        <select asp-for="Category" class="form-select">
+            <option>General</option>
+            <option>Facilities</option>
+            <option>IT</option>
+            <option>Security</option>
+            <option>Academic</option>
+            <option>Other</option>
+        </select>
+    </div>
+    <div class="col-md-4 mb-3">
+        <label asp-for="ReporterName" class="form-label"></label>
+        <input asp-for="ReporterName" class="form-control" />
+    </div>
+    <div class="col-md-4 mb-3">
+        <label asp-for="ReporterEmail" class="form-label"></label>
+        <input asp-for="ReporterEmail" class="form-control" />
+        <span asp-validation-for="ReporterEmail" class="text-danger"></span>
+    </div>
+</div>
+

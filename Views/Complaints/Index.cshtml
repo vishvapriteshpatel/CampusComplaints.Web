@@ -1,0 +1,72 @@
+@model IEnumerable<CampusComplaints.Web.Models.Complaint>
+
+@{
+    ViewData["Title"] = "Complaints";
+}
+
+<div class="container mt-4">
+    <div class="d-flex align-items-center mb-3">
+        <h2 class="me-auto">@ViewData["Title"]</h2>
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#newComplaintModal">New Complaint</button>
+    </div>
+
+    @if (TempData["SuccessMessage"] is string msg)
+    {
+        <div class="alert alert-success">@msg</div>
+    }
+
+    @if (!Model.Any())
+    {
+        <p class="text-muted">No complaints yet.</p>
+    }
+    else
+    {
+        <div class="row row-cols-1 row-cols-md-2 g-3">
+            @foreach (var item in Model)
+            {
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <h5 class="card-title mb-0">@item.Title</h5>
+                                <span class="badge bg-secondary">@item.Status</span>
+                            </div>
+                            <p class="text-muted mb-2">Category: @item.Category</p>
+                            <p class="card-text">@item.Description</p>
+                            <p class="text-muted mb-0">Reported: @item.CreatedAtUtc.ToLocalTime().ToString("g")</p>
+                        </div>
+                        <div class="card-footer bg-white border-top-0 d-flex gap-2">
+                            <a class="btn btn-sm btn-outline-secondary" asp-action="Details" asp-route-id="@item.Id">Details</a>
+                            <a class="btn btn-sm btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                            <form asp-action="Delete" asp-route-id="@item.Id" method="post" class="d-inline ms-auto">
+                                <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Delete this complaint?');">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>
+
+<div class="modal fade" id="newComplaintModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Submit Complaint</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form asp-action="Create" method="post">
+        <div class="modal-body">
+            <partial name="_FormFields" model="new CampusComplaints.Web.Models.Complaint()" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+

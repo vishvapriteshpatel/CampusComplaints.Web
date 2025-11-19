@@ -1,0 +1,57 @@
+﻿@{
+    ViewData["Title"] = "Campus Complaint Management System";
+}
+
+<section class="hero gradient-hero text-white">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <h1 class="display-4 fw-bold mb-3">Campus Complaint Management System</h1>
+                <p class="lead mb-4">A centralized way for students to submit issues and for administrators to resolve them quickly and transparently.</p>
+                <a class="btn btn-light btn-lg me-2" asp-controller="Complaints" asp-action="Index">View Complaints</a>
+                <a class="btn btn-outline-light btn-lg" asp-controller="Complaints" asp-action="Index">Submit a Complaint</a>
+            </div>
+            <div class="col-lg-5 d-none d-lg-block">
+                <div class="hero-card shadow-lg rounded-4 p-4 bg-white text-dark">
+                    <h5 class="mb-3">Why this helps</h5>
+                    <ul class="list-unstyled small mb-0">
+                        <li class="mb-2">• Transparent status tracking</li>
+                        <li class="mb-2">• Faster resolution cycles</li>
+                        <li class="mb-2">• Category-based triage</li>
+                        <li>• Email attribution for follow-up</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <svg class="hero-wave" viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,64L48,90.7C96,117,192,171,288,181.3C384,192,480,160,576,133.3C672,107,768,85,864,96C960,107,1056,149,1152,154.7C1248,160,1344,128,1392,112L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z" fill="currentColor" fill-opacity="0.08"></path></svg>
+</section>
+
+<section class="container py-5">
+    <div class="row text-center mb-4">
+        <div class="col">
+            <h2 class="fw-semibold">Everything you need to manage campus issues</h2>
+            <p class="text-muted">Submit complaints, track statuses, and collaborate to resolve them.</p>
+        </div>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="feature-card h-100 p-4 border rounded-4">
+                <h5>Simple Submission</h5>
+                <p class="text-muted mb-0">Students can submit details with category, name, and email for quick triage.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card h-100 p-4 border rounded-4">
+                <h5>Status Tracking</h5>
+                <p class="text-muted mb-0">Follow progress from Open to InProgress, Resolved, or Closed.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card h-100 p-4 border rounded-4">
+                <h5>Admin Tools</h5>
+                <p class="text-muted mb-0">Edit, update status, and manage complaints from one place.</p>
+            </div>
+        </div>
+    </div>
+</section>
