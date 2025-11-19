@@ -10,7 +10,14 @@ Campus complaints tracking system built with ASP.NET Core MVC and Entity Framewo
 - API surface under `/api/complaints` for integrating a React or mobile frontend.
 - SQLite persistence (`app.db`) for lightweight local development.
 
-## Tech Stack
+## app overview
+<img width="1919" height="880" alt="Screenshot 2025-10-30 235519" src="https://github.com/user-attachments/assets/dad82cef-7825-4878-8e85-87c921784ddb" />
+<img width="1912" height="880" alt="Screenshot 2025-10-30 235647" src="https://github.com/user-attachments/assets/7378a14d-8ed9-4764-848b-e522e47ec492" />
+<img width="1660" height="634" alt="Screenshot 2025-10-31 000302" src="https://github.com/user-attachments/assets/a4a3a1a1-1994-4d1b-a7b7-fb19cc489ff8" />
+<img width="1913" height="796" alt="Screenshot 2025-10-31 001708" src="https://github.com/user-attachments/assets/b34d3031-7304-4cb8-8e62-41614ac2c97d" />
+<img width="885" height="527" alt="Screenshot 2025-10-31 001733" src="https://github.com/user-attachments/assets/c5c7aff1-4570-4a7d-b209-2e69b7224b62" />
+
+ ## Tech Stack
 
 - .NET 8 / ASP.NET Core MVC
 - Entity Framework Core with SQLite provider
@@ -73,5 +80,8 @@ Status (Open/InProgress/Resolved/Closed), CreatedAtUtc, UpdatedAtUtc.
 ## License
 
 No license has been specified yet. Add one before distributing this project.
+
+
+
 
 
